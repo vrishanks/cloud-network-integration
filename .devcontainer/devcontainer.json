@@ -1,0 +1,14 @@
+{
+    "name": "Cloud Network Integration",
+    "dockerFile": "Dockerfile",
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "ms-python.python",
+          "ms-azuretools.vscode-docker"
+        ]
+      }
+    },
+    "postCreateCommand": "scripts/setup_vpn.sh"
+  }
+  
