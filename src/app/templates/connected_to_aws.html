@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connected to AWS</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(to bottom, #000000, #FFA500);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            position: relative;
+        }
+        .aws-icon {
+            font-size: 10rem;
+        }
+        .globe-icon {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            color: #ffffff;
+            font-size: 4rem;
+        }
+        .globe-icon::after {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border: 2px solid #00ff00;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(0.8);
+                opacity: 0.7;
+            }
+            50% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(0.8);
+                opacity: 0.7;
+            }
+        }
+        .btn-test-connection {
+            background-color: transparent;
+            color: #ffffff;
+            border: 1px solid #ff7b00;
+            font-size: 1rem;
+            padding: 12px;
+            border-radius: 30px;
+            transition: background-color 0.3s;
+        }
+        .btn-test-connection:hover {
+            background-color: #ff7b00;
+        }
+        .card {
+            position: absolute;
+            top: 20px; 
+            right: 20px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            color: #000000; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <i class="fab fa-aws aws-icon"></i>
+        <br>
+        <button class="btn btn-test-connection" onclick="window.location.href='/'">Disconnect</button>
+    </div>
+    <h1>Successfully integrated to AWS Cloud!</h1>
+    <i class="fas fa-globe globe-icon"></i>
+    <div class="green-orb"></div>
+    <div class="card">
+        <h5>RDS Instance API Endpoint</h5>
+        <p>cli-db-vrishank.clmiomuk2ofd.ap-south-1.rds.amazonaws.com</p>
+        <h5>IAM User</h5>
+        <p>codespace-user</p>
+        <h5>VPC ID</h5>
+        <p>vpc-016aa56d53a739a2c</p>
+    </div>
+</body>
+</html>

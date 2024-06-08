@@ -1,14 +1,21 @@
 {
-    "name": "Cloud Network Integration",
-    "dockerFile": "Dockerfile",
-    "customizations": {
-      "vscode": {
-        "extensions": [
-          "ms-python.python",
-          "ms-azuretools.vscode-docker"
-        ]
-      }
-    },
-    "postCreateCommand": "scripts/setup_vpn.sh"
+  "name": "Cloud Network Integration",
+  "image": "mcr.microsoft.com/devcontainers/python:3.9",
+  "features": {
+    "aws-cli": "latest"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-azuretools.vscode-docker"
+      ]
+    }
+  },
+  "postCreateCommand": "pip install -r /workspaces/cloud-network-integration/src/app/requirements.txt",
+  "remoteEnv": {
+    "AWS_ACCESS_KEY_ID": "${{ secrets.AWS_ACCESS_KEY_ID }}",
+    "AWS_SECRET_ACCESS_KEY": "${{ secrets.AWS_SECRET_ACCESS_KEY }}",
+    "AWS_DEFAULT_REGION": "us-east-1"
   }
-  
+}
